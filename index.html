@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>نجات آدم فضایی‌ها | محور مختصات</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            background: #000000;
+            overflow: hidden;
+            margin: 0 auto;
+            padding: 0;
+            font-family: "ShFD",serif;
+        }
+
+        canvas {
+            padding: 0;
+            margin: auto;
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        @font-face {
+            font-family: "ShFD";
+            src: url('fonts/Shabnam-FD.eot');
+            src: url('fonts/Shabnam-FD.eot?#iefix') format('embedded-opentype'),
+            url('fonts/Shabnam-FD.woff2') format('woff2'),
+            url('fonts/Shabnam-FD.woff') format('woff'),
+            url('fonts/Shabnam-FD.ttf') format('truetype');
+            font-weight: normal;
+        }
+
+        #warning-message {
+            display: none;
+        }
+
+        @media only screen and (orientation: portrait) {
+            #wrapper {
+                display: none;
+            }
+            #warning-message {
+                display: block;
+            }
+        }
+
+        @media only screen and (orientation: landscape) {
+            #warning-message {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div id='preload' style='display: none'>
+
+            <img src=images/logo.png id="pre" /></div>
+        <div style="visibility: hidden; height: 0">&nbsp;</div>
+        <div id="canvasHold">
+            <canvas id="bgcanvas" style="z-index:0;position:absolute;left:0px;top:0px;" width="1024px" height="768px"></canvas>
+            <canvas id="canvas" style="z-index:1;position:absolute;left:0px;top:0px;" width="1024px" height="768px"></canvas>
+        </div>
+    </div>
+    <div id="warning-message">
+        <canvas id="portrait" style="z-index:0;position:absolute;left:0px;top:0px;" width="768px" height="1024px"></canvas>
+    </div>
+    <script type="e51b8fc44be0e8278aa903d3-text/javascript">
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, {
+            passive: false
+        });
+    </script>
+    <script type="e51b8fc44be0e8278aa903d3-text/javascript" src="create_js/jquery-3.5.1.min.js"></script>
+    <script src="create_js/createjs-2015.11.26.min.js" type="e51b8fc44be0e8278aa903d3-text/javascript"></script>
+    <script src="spacegraphjr.min.js" type="e51b8fc44be0e8278aa903d3-text/javascript"></script>
+
+    <script src="rocket-loader.min.js" data-cf-settings="e51b8fc44be0e8278aa903d3-|49" defer></script>
+</body>
+
+</html>
