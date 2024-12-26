@@ -76,6 +76,39 @@
     <div id="warning-message">
         <canvas id="portrait" style="z-index:0;position:absolute;left:0px;top:0px;" width="768px" height="1024px"></canvas>
     </div>
+
+    <audio id="myAudio" loop>
+        <source src="sound/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const audio = document.getElementById("myAudio");
+        const clickArea = document.getElementById("preload");
+        let audioStarted = false; // Flag to track if audio has started
+
+        function playAudio() {
+            if (!audioStarted) { // Only start if it hasn't already started
+                audio.play().then(() => {
+                    console.log("Audio started playing.");
+                    audioStarted = true; // Set the flag
+                    clickArea.textContent = "Music is playing..."; // Update the text
+                }).catch(error => {
+                    console.error("Error playing audio:", error);
+                    if (error.name === 'NotAllowedError'){
+                        clickArea.textContent = "Click again to enable audio";
+                    } else {
+                        clickArea.textContent = "Error playing audio";
+                    }
+                });
+            }
+        }
+
+
+        // Add event listener to the whole body or a specific element
+        document.addEventListener('click', playAudio);
+
+    </script>
     <script type="e51b8fc44be0e8278aa903d3-text/javascript">
         document.addEventListener('touchmove', function(e) {
             e.preventDefault();
